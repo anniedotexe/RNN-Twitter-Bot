@@ -1,6 +1,6 @@
 # RNN Twitter Bot :robot::pencil2:
 
-A Twitter bot written in Python. It will tweet generated text from a trained recurrent neural network (RNN).
+A Twitter bot written in Python. The recurrent neural network Twitter bot is deployed on AWS and tweets generated text with a temperature of 0.7 from the trained model.
 
 ---
 
