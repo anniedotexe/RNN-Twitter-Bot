@@ -1,5 +1,10 @@
 # RNN Twitter Bot :robot::pencil2:
 
+[![Python 3.6 | 3.7](https://img.shields.io/badge/python-3.6%20|%203.7-yellowgreen)](https://www.python.org/downloads/release/python-379/)
+[![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
+<span class="badge-buymeacoffee"><a href="https://www.buymeacoffee.com/awu2303" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a>
+</span>
+
 A Twitter bot written in Python. The recurrent neural network Twitter bot is deployed on AWS and tweets generated text with a temperature of 0.7 from the trained model.
 
 ---
@@ -32,7 +37,7 @@ Make sure to follow [Twitter's Automation Rules](https://help.twitter.com/en/rul
 
 #### To Run the Bot
 
-- [Python 3](https://www.python.org/downloads/)
+- [Python 3](https://www.python.org/downloads/release/python-379/)
 - [Pip](https://pypi.org/project/pip/) - a python package manager
     - Download this [file](https://bootstrap.pypa.io/get-pip.py), open a command prompt and navigate to the folder containing the `get-pip.py` installer, and run `python get-pip.py` to install
         - Run `pip --version` to check if it has installed correctly
