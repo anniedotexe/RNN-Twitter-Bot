@@ -1,3 +1,13 @@
+# IDE / Editor
+.vscode
+
+# SECRET INFORMATION and PERSONAL FILES
+credentials.py
+dickinson_config.json
+dickinson_vocab.json
+dickinson_weights.hdf5
+dickinson_gentext.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
