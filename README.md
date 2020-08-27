@@ -20,7 +20,6 @@ A Twitter bot written in Python. The recurrent neural network Twitter bot is dep
 
 ---
 
-
 ## Getting Started
 
 Make sure to follow [Twitter's Automation Rules](https://help.twitter.com/en/rules-and-policies/twitter-automation) to avoid getting your account banned.
