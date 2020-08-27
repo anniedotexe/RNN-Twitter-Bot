@@ -27,9 +27,9 @@ def tweet_from_generated_text(api):
 
     
     while True: 
-        textgen = textgenrnn(weights_path=model_dir+weights,
-                            vocab_path=model_dir+vocab,
-                            config_path=model_dir+config)
+        textgen = textgenrnn(weights_path=model_dir+model_name+weights,
+                            vocab_path=model_dir+model_name+vocab,
+                            config_path=model_dir+model_name+config)
 
         logger.info(f'Generating text to {gen_file} ...')
         textgen.generate_to_file(gen_file, 

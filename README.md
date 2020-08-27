@@ -73,20 +73,20 @@ TWITTER_ACCESS_TOKEN_SECRET="xxxx"
 ```
 
 4. Adjustments you can make in `config.py` to tweak the bot to your liking. *(Make sure to follow [Twitter's Automation Rules](https://help.twitter.com/en/rules-and-policies/twitter-automation) to avoid getting your account banned.)*
-    - **weights**, **vocab**, and **config** - (*MUST CHANGE*) Names of the weights and configuration files you downloaded from Colaboratory
-    - **gen_file** - Name of text file to generate text to
-    - **temperature** - Higher temperature will generate crazier text
-    - **prefix** - Set a prefix if you want each generated text to start with a given seed text
-    - **n** - Number of texts to generate
-    - **max_gen_length** - Maximum number of characters for each text generated
-    - **max_tweet_length** - Maximum number of characters for each tweet to have
-        - If the generated text is too long, it will be split into multiple tweets at this length
-        - Set to 280 (Twitter's character limit for tweets) if you are not adding anything to the end of the tweets
-    - **add_to_tweet** - Optional if you want to add text to end of tweets
-        - Set to None if you do not want to use
-    - **delay** - Time to wait in between each tweet in seconds
-    - **min_tweet_length** - Minimum number of characters in the tweet, will ignore tweets that are not long enough
-        - Set to 0 if this is not relevant to you
+    - **model_name** - (*MUST CHANGE*) Name of the model used for the weights and configuration files you downloaded from Colaboratory.
+    ![Model Name](resources-for-readme/model-name.png)
+    - **temperature** - Level of randomness for the predicted text. Higher temperature will generate crazier text. 
+    - **prefix** - Set a prefix if you want each generated text to start with a given seed text.
+    - **n** - Number of texts to generate.
+    - **max_gen_length** - Maximum number of characters for each text generated.
+    - **max_tweet_length** - Maximum number of characters for each tweet to have.
+        - If the generated text is too long, it will be split into multiple tweets at this length.
+        - Set to 280 (Twitter's character limit for tweets) if you are not adding anything to the end of the tweets.
+    - **add_to_tweet** - Optional if you want to add text to end of every tweet.
+        - Set to None if you do not want to use.
+    - **delay** - Time to wait in between each tweet in seconds.
+    - **min_tweet_length** - Minimum number of characters in the tweet, will ignore tweets that are not long enough.
+        - Set to 0 if this is not relevant to you.
 
 5. Use the [textgenrnn Colaboratory Notebook](https://colab.research.google.com/drive/1mMKGnVxirJnqDViH7BDJxFqWrsXlPSoK) to train your RNN.
     - See [Additional Information](#additional-information) for more details. 
@@ -146,13 +146,13 @@ credentials.py
 config.py
 twitter-ai-bot.py
 requirements.txt
-your_generated_text_file.txt
+yourmodelname_gentext.txt
 ```
 
 5. Connect to your instance on a bash command line using one of the following ways.
+    - Use [PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html?icmpid=docs_ec2_console) with the public DNS and private key file (.ppk).
     - Use a bash shell with the example ssh command (I use [Git Bash](https://gitforwindows.org/)).
         - Make sure you are in the directory with the key-pair file (.pem).
-    - Use [PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html?icmpid=docs_ec2_console) with the public DNS and private key file (.ppk).
     
 ![Connect to Bash](https://media.giphy.com/media/JTDsQkn9CG0bkQTv7T/giphy.gif)
 
