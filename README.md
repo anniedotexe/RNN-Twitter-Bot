@@ -37,7 +37,7 @@ Make sure to follow [Twitter's Automation Rules](https://help.twitter.com/en/rul
 
 #### To Run the Bot
 
-- [Python 3](https://www.python.org/downloads/release/python-379/)
+- [Python 3.6 or 3.7](https://www.python.org/downloads/release/python-379/)
 - [Pip](https://pypi.org/project/pip/) - a python package manager
     - Download this [file](https://bootstrap.pypa.io/get-pip.py), open a command prompt and navigate to the folder containing the `get-pip.py` installer, and run `python get-pip.py` to install
         - Run `pip --version` to check if it has installed correctly
@@ -126,6 +126,9 @@ RNN-Twitter-Bot
 
 1. Launch a VM instance on Google Cloud Platform.
     - See [Additional Information](#additional-information) for more details.
+    - Choose Ubuntu 18.04 LTS for the boot disk since it runs Python 3.6.9.
+
+    ![Ubuntu Boot Disk](resources-for-readme/boot-disk.png)
 
 2. Upload the following files to the virtual machine.
     - See [Additional Information](#additional-information) for more details.
@@ -167,8 +170,8 @@ pip3 install update pip
 ```
 
 - Check if python and pip have been installed correctly.
-    - `python3 --version`
-    - `pip3 --version`
+    - `python3 --version` should be 3.6.x or 3.7.x
+    - `pip3 --version` should be 20.x.x
 
 5. Install all required packages needed to run the script on the virtual machine.
 ```
@@ -189,7 +192,7 @@ python3 twitter-ai-bot.py
 
 Annie Wu ([@anniewu2303](https://github.com/anniewu2303)) 
 
-If you have any questions about the code, feel free to contact me.
+If you have any questions about the code, feel free to contact me anywhere below.
 
 <p align="left">
   <a href="mailto:anniewu2303@gmail.com"> 

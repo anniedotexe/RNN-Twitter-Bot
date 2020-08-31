@@ -11,9 +11,6 @@ Make adjustments below with your model file names and to tweak values for your t
 # Name of the model used for the weights and configuration files you downloaded from Colaboratory
 model_name = 'dickinson'
 
-# Name of text file to generate text to
-gen_file = model_name + '_gentext.txt'
-
 # Higher temperature will generate crazier text
 # Recommended to be between 0.7 and 1.0
 # You can also make it a temperature schedule (list) to cycle through
@@ -27,7 +24,7 @@ prefix = None
 n = 1
 
 # Maximum number of characters for each text generated
-max_gen_length = 10000
+max_gen_length = 1000
 
 # Set the max number of characters for each tweet to have
 # Twitter's character limit for a tweet is 280

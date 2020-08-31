@@ -25,6 +25,8 @@ def create_api():
 
 def tweet_from_generated_text(api):
 
+    # Name of text file to generate text to
+    gen_file = model_name + '_gentext.txt'
     
     while True: 
         textgen = textgenrnn(weights_path=model_dir+model_name+weights,
