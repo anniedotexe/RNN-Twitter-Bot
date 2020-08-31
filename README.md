@@ -5,7 +5,7 @@
 <span class="badge-buymeacoffee"><a href="https://www.buymeacoffee.com/awu2303" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a>
 </span>
 
-A Twitter bot written in Python. The recurrent neural network Twitter bot is deployed on AWS and tweets generated text with a temperature of 0.7 from the trained model.
+A Twitter bot written in Python. The recurrent neural network Twitter bot is deployed on a Google Cloud Platform Virtual Machine Instance and tweets generated text with a temperature of 0.7 from the trained model.
 
 ---
 
@@ -15,7 +15,7 @@ A Twitter bot written in Python. The recurrent neural network Twitter bot is dep
     - [Prerequisites](#prerequisites)
         - [To Train the Model](#to-train-the-model)
         - [To Run the Bot](#to-run-the-bot)
-        - [To Host the Bot](#to-host-the-bot-on-aws)
+        - [To Host the Bot](#to-host-the-bot)
 - [Instructions](#instructions)
     - [File Structure](#file-structure)
 - [Deployment](#deployment)
@@ -46,11 +46,9 @@ Make sure to follow [Twitter's Automation Rules](https://help.twitter.com/en/rul
 - [textgenrnn](https://github.com/minimaxir/textgenrnn) - a python3 module to easily train your own text-generating neural network of any size and complexity on any text dataset with a few lines of code, or quickly train on a text using a pretrained model
     - Run `pip install textgenrnn`
 
-#### To Host the Bot on AWS
+#### To Host the Bot
 
-- [Amazon Web Services EC2](https://aws.amazon.com/ec2/) - a web service that provides secure, resizable compute capacity in the cloud
-- [PuTTY](https://www.putty.org/) - an open-source terminal emulator, serial console and network file transfer application
-- [WinSCP](https://winscp.net/eng/download.php) - a client that allows secure file transfers between the client's local computer and the remote server
+- [Google Cloud Platform](https://cloud.google.com/free) - 
 
 ---
 
@@ -126,41 +124,39 @@ RNN-Twitter-Bot
 
 ## Deployment
 
-1. Launch an EC2 instance on Amazon Web Services.
+1. Launch a VM instance on Google Cloud Platform.
     - See [Additional Information](#additional-information) for more details.
 
-![Launch EC2 Instance](https://media.giphy.com/media/RIBJvH1dyXCl4WGrNl/giphy.gif)
+2. Upload the following files to the virtual machine.
+    - See [Additional Information](#additional-information) for more details.
 
-2. Load the key-pair file (.pem) into PuTTYgen (which was downloaded when you installed [PuTTY](https://www.putty.org/)) and save the private key as a private key file (.ppk).
-
-![Generate PPK](https://media.giphy.com/media/iIGG5Pgf338zjaAHMr/giphy.gif)
-
-3. Connect to your instance on [WinSCP](https://winscp.net/eng/download.php).
-    - The host name is ubuntu@[public DNS here].
-    - Click Advanced, go to Authentication under SSH, and load the previously generated private key file (.ppk).
-    - Login to the session.
-
-![Conenct to WinSCP](https://media.giphy.com/media/XDpwQS1KQA5ZyqmKaN/giphy.gif)
-
-4. Use [WinSCP](https://winscp.net/eng/download.php) to transfer the following directory and files to the server.
 
 ```
-model (directory)
 credentials.py
 config.py
 twitter-ai-bot.py
 requirements.txt
 yourmodelname_gentext.txt
+yourmodelname_config.json
+yourmodelname_vocab.json
+yourmodelname_weights.hdf5
 ```
 
-5. Connect to your instance on a bash command line using one of the following ways.
-    - Use [PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html?icmpid=docs_ec2_console) with the public DNS and private key file (.ppk).
-    - Use a bash shell with the example ssh command (I use [Git Bash](https://gitforwindows.org/)).
-        - Make sure you are in the directory with the key-pair file (.pem).
-    
-![Connect to Bash](https://media.giphy.com/media/JTDsQkn9CG0bkQTv7T/giphy.gif)
+3. Create a directory named `model` and move the configuration and weight files into that directory
 
-6. Install python and pip to the server on the bash command line.
+    - To create the directory
+        ```
+        mkdir model
+        ```
+
+    - To move the files
+        ```
+        mv yourmodelname_config.json model
+        mv yourmodelname_vocab.json model
+        mv yourmodelname_weights.hdf5 model
+        ```
+
+4. Install python and pip to the virtual machine.
 
 ```
 sudo apt update 
@@ -172,12 +168,10 @@ pip3 install update pip
 
 - Check if python and pip have been installed correctly.
     
-    ```
-    python3 --version
-    pip3 --version
-    ```
+    `python3 --version`
+    `pip3 --version`
 
-7. Install all required packages needed to run the script on the server.
+5. Install all required packages needed to run the script on the virtual machine.
 ```
 sudo python3 -m pip install -r requirements.txt
 ```
@@ -198,7 +192,7 @@ Annie Wu ([@anniewu2303](https://github.com/anniewu2303))
 
 This project was created for educational purposes of learning development, documentation, and deployment and for personal and open-source use.
 
-Default values of the project are used to run the Twitter account [@dickinson_rnn](https://twitter.com/dickinson_rnn)
+Default values of the project are used to run the Twitter account [@dickinson_rnn](https://twitter.com/dickinson_rnn), an bot that was trained to generate text with Emily Dickinson poems.
 
 If you like my content or find this code useful, give it a :star: or support me by buying me a coffee :coffee::grinning:
 
@@ -221,7 +215,7 @@ If you like my content or find this code useful, give it a :star: or support me 
     - [Max Woolf's Blog Post on How to Quickly Train a Text-Generating Neural Network for Free](https://minimaxir.com/2018/05/text-neural-networks/)
     - [Max Woolf's Demo of using the Colaboratory Notebook](https://github.com/minimaxir/textgenrnn/blob/master/docs/textgenrnn-demo.ipynb)
 
-- Amazon Web Services EC2
-    - [Getting Started with Amazon EC2](https://aws.amazon.com/ec2/getting-started/)
-    - [How to Continuously Run a Python Script on an EC2 Server](https://intellipaat.com/community/9361/how-to-continuously-run-a-python-script-on-an-ec2-server)
+- Google Cloud Playform VM Instance
+    - [Tutorial on Hosting Python Scripts on Google Cloud](https://www.youtube.com/watch?v=5OL7fu2R4M8)
+    - [Tutorial on Uploading Files to the VM Instance](https://intellipaat.com/community/9361/how-to-continuously-run-a-python-script-on-an-ec2-server)
 
