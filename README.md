@@ -48,7 +48,7 @@ Make sure to follow [Twitter's Automation Rules](https://help.twitter.com/en/rul
 
 #### To Host the Bot
 
-- [Google Cloud Platform](https://cloud.google.com/free) - 
+- [Google Cloud Platform](https://cloud.google.com/free) - a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products, such as Google Search, Gmail, file storage, and YouTube
 
 ---
 
@@ -167,9 +167,8 @@ pip3 install update pip
 ```
 
 - Check if python and pip have been installed correctly.
-    
-    `python3 --version`
-    `pip3 --version`
+    - `python3 --version`
+    - `pip3 --version`
 
 5. Install all required packages needed to run the script on the virtual machine.
 ```
