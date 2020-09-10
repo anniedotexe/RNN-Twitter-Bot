@@ -211,7 +211,7 @@ If you have any questions about the code, feel free to contact me anywhere below
 
 This project was created for educational purposes of learning development, documentation, and deployment and for personal and open-source use.
 
-Default values of the project are used to run the Twitter account [@dickinson_rnn](https://twitter.com/dickinson_rnn), an bot that was trained to generate text with Emily Dickinson poems.
+Default values of the project are used to run the Twitter account [@dickinson_rnn](https://twitter.com/dickinson_rnn), a bot that was trained to generate text with Emily Dickinson poems.
 
 If you like my content or find this code useful, give it a :star: or support me by buying me a coffee :coffee::grinning:
 
