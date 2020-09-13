@@ -126,9 +126,13 @@ RNN-Twitter-Bot
 
 1. Launch a VM instance on Google Cloud Platform.
     - See [Additional Information](#additional-information) for more details.
-    - Choose Ubuntu 18.04 LTS for the boot disk since it runs Python 3.6.9.
+    - Choose g1-small (1 vCPU, 1.7 GB memory) for machine type, so it has enough power to generate from the model.
+    
+        ![Machine Type](resources-for-readme/machine-type.png)
+    
+    - Choose Ubuntu 18.04 LTS for the boot disk since it runs a python version that is required.
 
-    ![Ubuntu Boot Disk](resources-for-readme/boot-disk.png)
+        ![Ubuntu Boot Disk](resources-for-readme/boot-disk.png)
 
 2. Upload the following files to the virtual machine.
     - See [Additional Information](#additional-information) for more details.
