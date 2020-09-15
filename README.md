@@ -7,6 +7,8 @@
 
 A Twitter bot written in Python. The recurrent neural network Twitter bot is deployed on a Google Cloud Platform Virtual Machine Instance and tweets generated text with a temperature of 0.7 from the trained model.
 
+***DISCLAIMER FOR DEPLOYING ON GCP VM INSTANCE:*** Due to inactivity because the python script does not need any interaction, the process will get killed after ~2 days, so you will need to SSH in and run `python3 twitter-ai-bot.py` every few days.
+
 ---
 
 ### Table of Contents
@@ -123,6 +125,8 @@ RNN-Twitter-Bot
 ---
 
 ## Deployment
+
+***DISCLAIMER FOR DEPLOYING ON GCP VM INSTANCE:*** Due to inactivity because the python script does not need any interaction, the process will get killed after ~2 days, so you will need to SSH in and run `python3 twitter-ai-bot.py` every few days.
 
 1. Launch a VM instance on Google Cloud Platform.
     - See [Additional Information](#additional-information) for more details.
