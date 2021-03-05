@@ -5,9 +5,7 @@
 <span class="badge-buymeacoffee"><a href="https://www.buymeacoffee.com/awu2303" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a>
 </span>
 
-A Twitter bot written in Python. The recurrent neural network Twitter bot is deployed on a Google Cloud Platform Virtual Machine Instance and tweets generated text with a temperature of 0.7 from the trained model.
-
-***DISCLAIMER FOR DEPLOYING ON GCP VM INSTANCE:*** Due to inactivity because the python script does not need any interaction, the process will get killed after ~2 days, so you will need to SSH in and run `python3 twitter-ai-bot.py` every few days.
+A Twitter bot written in Python. The recurrent neural network Twitter bot tweets generated text with a temperature of 0.7 from the trained model.
 
 ---
 
@@ -17,10 +15,8 @@ A Twitter bot written in Python. The recurrent neural network Twitter bot is dep
     - [Prerequisites](#prerequisites)
         - [To Train the Model](#to-train-the-model)
         - [To Run the Bot](#to-run-the-bot)
-        - [To Host the Bot](#to-host-the-bot)
 - [Instructions](#instructions)
     - [File Structure](#file-structure)
-- [Deployment](#deployment)
 - [Creator / Maintainer](#creator-maintainer)
 - [Acknowledgments](#acknowledgments)
 - [Additional Information](#additional-information)
@@ -47,10 +43,6 @@ Make sure to follow [Twitter's Automation Rules](https://help.twitter.com/en/rul
     - Run `pip install tweepy`
 - [textgenrnn](https://github.com/minimaxir/textgenrnn) - a python3 module to easily train your own text-generating neural network of any size and complexity on any text dataset with a few lines of code, or quickly train on a text using a pretrained model
     - Run `pip install textgenrnn`
-
-#### To Host the Bot
-
-- [Google Cloud Platform](https://cloud.google.com/free) - a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products, such as Google Search, Gmail, file storage, and YouTube
 
 ---
 
@@ -122,77 +114,6 @@ RNN-Twitter-Bot
 |-- credentials.py
 `-- twitter-ai-bot.py
 ```
----
-
-## Deployment
-
-***DISCLAIMER FOR DEPLOYING ON GCP VM INSTANCE:*** Due to inactivity because the python script does not need any interaction, the process will get killed after ~2 days, so you will need to SSH in and run `python3 twitter-ai-bot.py` every few days.
-
-1. Launch a VM instance on Google Cloud Platform.
-    - See [Additional Information](#additional-information) for more details.
-    - Choose g1-small (1 vCPU, 1.7 GB memory) for machine type, so it has enough power to generate from the model.
-    
-        ![Machine Type](resources-for-readme/machine-type.png)
-    
-    - Choose Ubuntu 18.04 LTS for the boot disk since it runs a python version that is required.
-
-        ![Ubuntu Boot Disk](resources-for-readme/boot-disk.png)
-
-2. Upload the following files to the virtual machine.
-    - See [Additional Information](#additional-information) for more details.
-
-
-```
-credentials.py
-config.py
-twitter-ai-bot.py
-requirements.txt
-yourmodelname_gentext.txt
-yourmodelname_config.json
-yourmodelname_vocab.json
-yourmodelname_weights.hdf5
-```
-
-3. Create a directory named `model` and move the configuration and weight files into that directory
-
-    - To create the directory
-        ```
-        mkdir model
-        ```
-
-    - To move the files
-        ```
-        mv yourmodelname_config.json model
-        mv yourmodelname_vocab.json model
-        mv yourmodelname_weights.hdf5 model
-        ```
-
-4. Install python and pip to the virtual machine.
-
-```
-sudo apt update 
-sudo apt upgrade
-sudo apt install python3
-sudo apt install python3-pip
-pip3 install update pip
-```
-
-- Check if python and pip have been installed correctly.
-    - `python3 --version` should be 3.6.x or 3.7.x
-    - `pip3 --version` should be 20.x.x
-
-5. Install all required packages needed to run the script on the virtual machine.
-```
-sudo python3 -m pip install -r requirements.txt
-```
-
-8. Run the script. Enjoy!.
-```
-python3 twitter-ai-bot.py
-```
-
-- See [Additional Information](#additional-information) for details on running the script continuously.
-    - I used the *screen* option.
 
 ---
 
@@ -241,8 +162,3 @@ If you like my content or find this code useful, give it a :star: or support me 
     - [Max Woolf's YouTube Video on Training a Text-Generating Neural Network for Free with textgenrnn](https://www.youtube.com/watch?v=RW7mP6BfZuY)
     - [Max Woolf's Blog Post on How to Quickly Train a Text-Generating Neural Network for Free](https://minimaxir.com/2018/05/text-neural-networks/)
     - [Max Woolf's Demo of using the Colaboratory Notebook](https://github.com/minimaxir/textgenrnn/blob/master/docs/textgenrnn-demo.ipynb)
-
-- Google Cloud Playform VM Instance
-    - [Tutorial on Hosting Python Scripts on Google Cloud](https://www.youtube.com/watch?v=5OL7fu2R4M8)
-    - [Tutorial on Uploading Files to the VM Instance](https://intellipaat.com/community/9361/how-to-continuously-run-a-python-script-on-an-ec2-server)
-
