@@ -16,7 +16,7 @@ A Twitter bot written in Python. The recurrent neural network Twitter bot tweets
 - [Instructions](#instructions)
   - [File Structure](#file-structure)
 - [Contributing](#contributing)
-- [Creator / Maintainer](#creator-maintainer)
+- [Creator / Maintainer](#creator--maintainer)
 - [Acknowledgments](#acknowledgments)
 - [Additional Information](#additional-information)
 
