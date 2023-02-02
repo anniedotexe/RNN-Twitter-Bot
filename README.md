@@ -5,6 +5,9 @@
 
 A Twitter bot written in Python. The recurrent neural network Twitter bot tweets generated text with a temperature of 0.7 from the trained model.
 
+### Important Notice
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Starting February 9, we will no longer support free access to the Twitter API, both v2 and v1.1. A paid basic tier will be available instead 🧵</p>&mdash; Twitter Dev (<a href="https://twitter.com/TwitterDev/status/1621026986784337922?ref_src=twsrc%5Etfw">@TwitterDev</a>) February 2, 2023</blockquote>
+
 ---
 
 ### Table of Contents
